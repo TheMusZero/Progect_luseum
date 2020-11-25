@@ -17,7 +17,7 @@ class Option(QWidget):
 
     def image_searching(self, data):
         print(data)
-        selected_picture = data[-2]
+        selected_picture = data[0][-2]
 
         print('pictures/' + str(selected_picture) + '.png')
         return 'pictures/' + str(selected_picture) + '.png'\
