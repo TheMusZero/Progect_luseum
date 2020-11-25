@@ -125,7 +125,7 @@ def design_of_Random_Number(self):
     self.setWindowTitle('Вторая форма')
 
     pixmap = QPixmap(self.image_searching())
-    self.setGeometry(0, 0, pixmap.width(), pixmap.height() + 100)
+    self.setGeometry(630, 424, pixmap.width(), pixmap.height() + 100)
     self.setStyleSheet("background-color: white;")
 
     self.pich = QLabel(self)
