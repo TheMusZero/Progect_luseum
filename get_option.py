@@ -3,7 +3,6 @@ import sqlite3
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget
 
-from option import Option
 from take_new_task_from_id import Take_new_task_from_id
 from windows_design import design_of_get_option
 
@@ -30,9 +29,12 @@ class Get_Opton(QWidget):
                 self.wrong_input.setStyleSheet('font-size: 15px;')
                 self.wrong_input.setText('Введен не существующий вариант!')
             else:
-                for i in self.data:
-                    self.first_form = Option(i, self)
+                for self.i in self.data:
+                    self.first_form = Take_new_task_from_id(self.i, self)
                     self.first_form.show()
+                    self.close()
+
+
 
         except sqlite3.OperationalError:
             self.wrong_input.setText('Введен не существующий ID!!!')
