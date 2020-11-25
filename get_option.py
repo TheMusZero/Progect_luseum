@@ -13,6 +13,9 @@ class Get_Opton(QWidget):
         super().__init__()
         self.parent = parent
         self.initUI()
+        self.current_task = None
+        self.tasks = None
+        self.first_form = None
 
     def initUI(self):
         design_of_get_option(self)
@@ -30,23 +33,34 @@ class Get_Opton(QWidget):
                 self.wrong_input.setStyleSheet('font-size: 15px;')
                 self.wrong_input.setText('Введен не существующий вариант!')
             else:
-                for self.i in self.data:
-                    self.first_form = Take_new_task_from_id2(self.i, self)
-                    self.first_form.show()
-                    self.close()
-
-
+                self.current_task = 0
+                self.tasks = self.data
+                self.show_task()
 
         except sqlite3.OperationalError:
             self.wrong_input.setText('Введен не существующий ID!!!')
 
-    def keyPressEvent(self, event):
-        if event.key() == Qt.Key_Space:
-            self.first_form = Take_new_task_from_id(self.i, self)
-            self.first_form.show()
-            self.close()
-            self.flag = True
+    def show_task(self):
+        if self.first_form:
+            self.first_form.close()
+        self.first_form = Take_new_task_from_id2(self.tasks[self.current_task], self)
+        self.first_form.show()
 
-    def Back_to_menu(self):
+    def next_task(self):
+        self.current_task += 1
+        if self.current_task == len(self.tasks):
+            return
+        self.show_task()
+
+
+def keyPressEvent(self, event):
+    if event.key() == Qt.Key_Space:
+        self.first_form = Take_new_task_from_id(self.i, self)
+        self.first_form.show()
         self.close()
-        self.parent.show()
+        self.flag = True
+
+
+def Back_to_menu(self):
+    self.close()
+    self.parent.show()

@@ -41,6 +41,8 @@ class Take_new_task_from_id2(QWidget):
                         (int(config.getValue('false')) + int(config.getValue('true'))))
         self.correct_answer.setStyleSheet('font-size: 20px;')
 
+        self.parent.next_task()
+
     def number_of_task(self):
         con = sqlite3.connect('kim.db')
         cur = con.cursor()
