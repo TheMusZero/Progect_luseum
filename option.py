@@ -17,7 +17,7 @@ class Take_new_task_from_id2(QWidget):
 
     def image_searching(self, data):
         print(data)
-        selected_picture = data[0][-2]
+        selected_picture = data[-2]
 
         print('pictures/' + str(selected_picture) + '.png')
         return 'pictures/' + str(selected_picture) + '.png'\

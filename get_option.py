@@ -3,6 +3,7 @@ import sqlite3
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget
 
+from option import Take_new_task_from_id2
 from take_new_task_from_id import Take_new_task_from_id
 from windows_design import design_of_get_option
 
