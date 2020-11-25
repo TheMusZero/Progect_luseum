@@ -52,15 +52,6 @@ class Get_Opton(QWidget):
             return
         self.show_task()
 
-
-def keyPressEvent(self, event):
-    if event.key() == Qt.Key_Space:
-        self.first_form = Take_new_task_from_id(self.i, self)
-        self.first_form.show()
+    def Back_to_menu(self):
         self.close()
-        self.flag = True
-
-
-def Back_to_menu(self):
-    self.close()
-    self.parent.show()
+        self.parent.show()
