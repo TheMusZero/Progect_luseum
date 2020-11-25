@@ -31,7 +31,7 @@ class Get_Opton(QWidget):
                 self.wrong_input.setText('Введен не существующий вариант!')
             else:
                 for i in self.data:
-                    self.first_form = Option(self.data, self)
+                    self.first_form = Option(i, self)
                     self.first_form.show()
 
         except sqlite3.OperationalError:
