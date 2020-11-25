@@ -30,7 +30,7 @@ class Get_Opton(QWidget):
                 self.wrong_input.setText('Введен не существующий вариант!')
             else:
                 for self.i in self.data:
-                    self.first_form = Take_new_task_from_id(self.i, self)
+                    self.first_form = Take_new_task_from_id2(self.i, self)
                     self.first_form.show()
                     self.close()
 

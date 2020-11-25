@@ -6,7 +6,7 @@ from new_config import Config
 from windows_design import design_of_tntfi
 
 
-class Option(QWidget):
+class Take_new_task_from_id2(QWidget):
     def __init__(self, data, parent):
         super().__init__()
         self.parent = parent
