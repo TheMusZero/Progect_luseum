@@ -5,7 +5,7 @@ from new_config import Config
 
 
 def design_of_tntfi(self, data):
-    self.setWindowTitle('Вторая форма')
+    self.setWindowTitle(' ')
 
     pixmap = QPixmap(self.image_searching(data))
     self.setGeometry(520, 369, pixmap.width(), pixmap.height() + 100)
@@ -38,7 +38,7 @@ def design_of_tntfi(self, data):
 
 
 def desing_of_SearchTasksByID(self):
-    self.setWindowTitle('test')
+    self.setWindowTitle(' ')
 
     self.search = QLabel('Поиск по id:', self)
     self.search.move(10, 10)
@@ -61,7 +61,7 @@ def desing_of_SearchTasksByID(self):
 
 def desing_of_main_menu(self):
     self.setGeometry(748, 417, 300, 320)
-    self.setWindowTitle('Main_menu')
+    self.setWindowTitle(' ')
 
     self.Choice_of_option = QPushButton('Выбор варианта', self)
     self.Choice_of_option.move(30, 30)
@@ -106,7 +106,7 @@ def design_of_Progress(self):
     self.solution_options = QLabel(self)
     self.solution_options.move(20, 140)
     self.solution_options.resize(531, 41)
-    self.solution_options.setText(f'Было решено {config.getValue("solution_options")} варианов')
+    self.solution_options.setText(f'Было решено {config.getValue("solution_options")} вариант')
 
     self.average_rating = QLabel(self)
     self.average_rating.move(20, 200)
@@ -124,7 +124,7 @@ def design_of_Progress(self):
 
 
 def design_of_Random_Number(self):
-    self.setWindowTitle('Вторая форма')
+    self.setWindowTitle(' ')
 
     pixmap = QPixmap(self.image_searching())
     self.setGeometry(630, 424, pixmap.width(), pixmap.height() + 100)
@@ -157,23 +157,49 @@ def design_of_Random_Number(self):
 
 
 def design_of_get_option(self):
-    self.setWindowTitle('test')
+    self.setWindowTitle(' ')
 
     self.search = QLabel('Поиск по варианту:', self)
-    self.search.move(10, 10)
-    self.search.resize(61, 21)
+    self.search.move(3, 10)
+    self.search.resize(96, 21)
 
     self.wrong_input = QLabel(self)
-    self.wrong_input.move(10, 40)
+    self.wrong_input.move(10, 50)
     self.wrong_input.resize(221, 20)
     self.i = 0
 
     self.line_edit = QLineEdit(self)
-    self.line_edit.move(80, 10)
-    self.line_edit.resize(251, 21)
+    self.line_edit.move(100, 10)
+    self.line_edit.resize(231, 21)
     self.line_edit.returnPressed.connect(self.take_task)
 
     self.bom = QPushButton('Вернуться в меню', self)
     self.bom.move(220, 40)
     self.bom.resize(101, 23)
     self.bom.clicked.connect(self.Back_to_menu)
+
+
+def design_of_final_window(self):
+    self.setWindowTitle('')
+    self.setGeometry(703, 457, 400, 300)
+
+    self.lable_1 = QLabel(self)
+    self.lable_1.setGeometry(40, 40, 291, 31)
+    self.lable_1.setStyleSheet('font-size: 20px;')
+    self.lable_1.setText('Вы решили все задачи данного')
+    self.lable_2 = QLabel(self)
+    self.lable_2.setGeometry(150, 60, 291, 31)
+    self.lable_2.setStyleSheet('font-size: 20px;')
+    self.lable_2.setText('Варианта')
+
+    self.correct_label = QLabel(self)
+    self.correct_label.setGeometry(20, 100, 311, 41)
+    self.correct_label.setStyleSheet('font-size: 15px;')
+
+    self.incorrect_label = QLabel(self)
+    self.incorrect_label.setGeometry(20, 170, 321, 41)
+    self.incorrect_label.setStyleSheet('font-size: 15px;')
+
+    self.mark_label = QLabel(self)
+    self.mark_label.setGeometry(110, 230, 241, 51)
+    self.mark_label.setStyleSheet('font-size: 20px;')

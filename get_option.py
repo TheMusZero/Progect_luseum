@@ -31,7 +31,7 @@ class Get_Opton(QWidget):
                                         WHERE option = {str(self.line_edit.text())}""").fetchall()
 
             if len(self.data) == 0:
-                self.wrong_input.setStyleSheet('font-size: 15px;')
+                self.wrong_input.setStyleSheet('font-size: 13px;')
                 self.wrong_input.setText('Введен не существующий вариант!')
             else:
                 self.current_task = 0
