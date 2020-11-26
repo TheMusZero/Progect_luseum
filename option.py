@@ -30,10 +30,12 @@ class Take_new_task_from_id2(QWidget):
         if str(CoAn) != self.input_answer.text():
             self.correct_answer.setText(f'Неверно!!\nВерный ответ: {CoAn}')
             config.setValue('false', int(config.getValue('false')) + 1)
+            config.setValue('false_in_option', int(config.getValue('false_in_option')) + 1)
             self.close()
         else:
             self.correct_answer.setText("Верно!!!")
             config.setValue('true', int(config.getValue('true')) + 1)
+            config.setValue('true_in_option', int(config.getValue('true_in_option')) + 1)
             self.close()
         config.setValue('was_decided', int(config.getValue('was_decided')) + 1)
         config.setValue('average_rating', (int(config.getValue('false')) * 2 +

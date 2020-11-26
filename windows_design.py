@@ -36,6 +36,7 @@ def design_of_tntfi(self, data):
     self.correct_answer.resize(170, 50)
     self.correct_answer.move(280, 20 + pixmap.height())
 
+
 def desing_of_SearchTasksByID(self):
     self.setWindowTitle('test')
 
@@ -85,6 +86,7 @@ def desing_of_main_menu(self):
     self.Progress.resize(241, 51)
     self.Progress.setStyleSheet('font-size: 15px;')
     self.Progress.clicked.connect(self.Prog)
+
 
 def design_of_Progress(self):
     config = Config()
@@ -152,6 +154,7 @@ def design_of_Random_Number(self):
     self.correct_answer = QLabel(self)
     self.correct_answer.resize(170, 50)
     self.correct_answer.move(280, 20 + pixmap.height())
+
 
 def design_of_get_option(self):
     self.setWindowTitle('test')
